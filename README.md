@@ -643,21 +643,3 @@ end)
 -- ===== INICIALIZAÇÕES =====
 UpdatePlayerList()
 notify("Interface carregada! Players menu, Chat e Status prontos.")
-
-
--- ===== BOLINHA MOBILE PARA ABRIR MENU =====
-local isMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
-if isMobile then
-    local OpenButton = Instance.new("ImageButton", PlayerGui)
-    OpenButton.Size = UDim2.new(0,50,0,50)
-    OpenButton.Position = UDim2.new(0.9,0,0.9,0)
-    OpenButton.BackgroundColor3 = Color3.fromRGB(0,170,255)
-    OpenButton.Image = "" -- coloque um ícone se quiser
-    OpenButton.ZIndex = 10
-    Instance.new("UICorner", OpenButton).CornerRadius = UDim.new(1,0)
-
-    OpenButton.MouseButton1Click:Connect(function()
-        MainFrame.Visible = not MainFrame.Visible
-        ChatFrame.Visible = MainFrame.Visible
-    end)
-end
